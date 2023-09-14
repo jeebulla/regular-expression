@@ -44,12 +44,17 @@ console.log(input.replace(singleQuotes, '$1"'));
 function numbers() {
   let userInputs = prompt("Enter a Number here");
 
-  let numberPattern = /^[-+][0-9]*\.?[0-9]*([eE][-+]?[0-9]+)?$/;
+  let numberPattern = /^[-+]?[0-9]*(?:\.[0-9]*)?(?:[eE]+)?$/;
   let num = numberPattern.test(userInputs);
 
-  if (num !== true) {
-    alert(false);
-  } else {
+  if (num === true) {
     alert(true);
+  } else {
+    alert(false);
   }
 }
+
+let numberPattern = /^[-+]?[0-9]*(?:\.[0-9]*)?(?:[eE]+)?$/;
+console.log(numberPattern.test("2e"));
+
+// (?:[eE][-+]?[0-9]+)?
