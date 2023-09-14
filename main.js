@@ -44,12 +44,12 @@ console.log(input.replace(singleQuotes, '$1"'));
 function numbers() {
   let userInputs = prompt("Enter a Number here");
 
-  let numberPattern = /^[-+]?(\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?$/;
+  let numberPattern = /^[-+][0-9]*\.?[0-9]*([eE][-+]?[0-9]+)?$/;
   let num = numberPattern.test(userInputs);
 
   if (num !== true) {
-    alert(`${userInputs} is not a VALID Javascript number`);
+    alert(false);
   } else {
-    alert(`${userInputs} is a VALID javascript number`);
+    alert(true);
   }
 }
